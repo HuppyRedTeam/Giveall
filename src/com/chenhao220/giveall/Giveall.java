@@ -1,4 +1,4 @@
-package com.chenhao220.giveall;
+ï»¿package com.chenhao220.giveall;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -13,16 +13,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Giveall extends JavaPlugin implements Listener {
 	public void onEnable(){
-		 this.getLogger().info("²å¼şÒÑ¼ÓÔØ");
+		 this.getLogger().info("æ’ä»¶å·²åŠ è½½");
 		   if(!new File(getDataFolder()+"\\config.yml").exists()){
 			   this.getDataFolder().mkdir();
 			   this.getConfig().options().copyDefaults(true);
 			   this.saveDefaultConfig();
 		   }
-		   this.getLogger().info("²å¼şÅäÖÃÎÄ¼şÒÑ¶ÁÈ¡");
+		   this.getLogger().info("æ’ä»¶é…ç½®æ–‡ä»¶å·²è¯»å–");
 	   }
 	   public void onDisable(){
-		   this.getLogger().info("²å¼şÒÑĞ¶ÔØ");
+		   this.getLogger().info("æ’ä»¶å·²å¸è½½");
 		   this.saveConfig();
 	   }
 
@@ -36,35 +36,35 @@ public final class Giveall extends JavaPlugin implements Listener {
 			    	   int itemAmount = Integer.parseInt(str2);
 				       ItemStack item = new ItemStack(itemID,itemAmount);
 				       if(itemAmount >64){
-				    	   sender.sendMessage("¡ìc[GiveAll]ÊıÁ¿Ì«¶à£¬ÎïÆ·ÊıÁ¿±ØĞëĞ¡ÓÚ64");
-			    		   sender.sendMessage("¡ìc[GiveAll]ÓÃ·¨£º/giveall <ÎïÆ·ID> <ÎïÆ·ÊıÁ¿>");
+				    	   sender.sendMessage("Â§c[GiveAll]æ•°é‡å¤ªå¤šï¼Œç‰©å“æ•°é‡å¿…é¡»å°äº64");
+			    		   sender.sendMessage("Â§c[GiveAll]ç”¨æ³•ï¼š/giveall <ç‰©å“ID> <ç‰©å“æ•°é‡>");
 			    		   return true;
 				       }
 				       if(itemAmount <1){
-				    	   sender.sendMessage("¡ìc[GiveAll]ÎïÆ·ÊıÁ¿²»ÕıÈ·");
-			    		   sender.sendMessage("¡ìc[GiveAll]ÓÃ·¨£º/giveall <ÎïÆ·ID> <ÎïÆ·ÊıÁ¿>");
+				    	   sender.sendMessage("Â§c[GiveAll]ç‰©å“æ•°é‡ä¸æ­£ç¡®");
+			    		   sender.sendMessage("Â§c[GiveAll]ç”¨æ³•ï¼š/giveall <ç‰©å“ID> <ç‰©å“æ•°é‡>");
                            return true;
 			    	   }
 			    	   for(Player p : getServer().getOnlinePlayers()){
 			    		   p.getInventory().addItem(item);
-			    		   p.sendMessage("¡ìa[GiveAll]ÒÑÊÕµ½ÎïÆ·£º"+itemID+" "+itemAmount+"¸ö");
+			    		   p.sendMessage("Â§a[GiveAll]å·²æ”¶åˆ°ç‰©å“ï¼š"+itemID+" "+itemAmount+"ä¸ª");
 			    		   return true;
 			    	   }
 			    	   }catch(Exception e){
-			    		   sender.sendMessage("¡ìc[GiveAll]²ÎÊı´íÎó£¡");
-			    		   sender.sendMessage("¡ìc[GiveAll]ÓÃ·¨£º/giveall <ÎïÆ·ID> <ÎïÆ·ÊıÁ¿>");
+			    		   sender.sendMessage("Â§c[GiveAll]å‚æ•°é”™è¯¯ï¼");
+			    		   sender.sendMessage("Â§c[GiveAll]ç”¨æ³•ï¼š/giveall <ç‰©å“ID> <ç‰©å“æ•°é‡>");
 			    	   }
 			       }
 			       if(args.length!=2){
-				       sender.sendMessage("¡ìa[GiveAll] Version: "+this.getConfig().getString("version"));
-				       sender.sendMessage("¡ìa[GiveAll] Code: "+this.getConfig().getString("code"));
-				       sender.sendMessage("¡ìa´Ë°æ±¾×÷Õß:chenhao220");
-				       sender.sendMessage("¡ìa[GiveAll]ÓÃ·¨£º/giveall <ÎïÆ·ID> <ÎïÆ·ÊıÁ¿>");
+				       sender.sendMessage("Â§a[GiveAll] Version: "+this.getConfig().getString("version"));
+				       sender.sendMessage("Â§a[GiveAll] Code: "+this.getConfig().getString("code"));
+				       sender.sendMessage("Â§aæ­¤ç‰ˆæœ¬ä½œè€…:chenhao220");
+				       sender.sendMessage("Â§a[GiveAll]ç”¨æ³•ï¼š/giveall <ç‰©å“ID> <ç‰©å“æ•°é‡>");
 				       return true;
 			       }
 		return false;
 		   }else{
-			   sender.sendMessage("ÃüÁî´íÎó");
+			   sender.sendMessage("å‘½ä»¤é”™è¯¯");
 			   return false;
 		   }
 	   }
