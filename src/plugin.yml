@@ -1,0 +1,13 @@
+name: GiveAll
+main: com.chenhao220.giveall.Giveall
+version: 1.0
+commands:
+  giveall:
+    description: /giveall <id> 给与全部玩家物品
+    usage: /giveall 玩家
+    permission: giveAll.give
+    permission-message: §c你需要giveall.give权限来执行此命令
+permissions: 
+  giveall.give: 
+    description: 允许使用/giveall
+    default: op
