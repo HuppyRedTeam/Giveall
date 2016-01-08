@@ -1,9 +1,5 @@
-﻿package com.chenhao220.giveall;
+package com.chenhao220.giveall;
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -26,6 +22,7 @@ public final class Giveall extends JavaPlugin implements Listener {
 		   this.saveConfig();
 	   }
 
+	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender,Command cmd, String label, String[] args){
 		   if(cmd.getName().equalsIgnoreCase("giveall")){
 			       if(args.length==2){
